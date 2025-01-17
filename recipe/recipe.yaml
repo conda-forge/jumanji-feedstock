@@ -1,6 +1,6 @@
 context:
   name: jumanji
-  version: 1.0.1
+  version: "1.1.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/jumanji-${{ version }}.tar.gz
-  sha256: cdbc0245deb2f72cfdaf3719793a484d26ac25b06f2bfaa0e8323a1d79fef8d2
+  sha256: 1baa7655bb59060f2435531e449baf2c24e7481ee02725bb34c05a722ac44b57
   patches:
     - relax-matplotlib-pin.patch
 
