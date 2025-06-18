@@ -35,12 +35,10 @@ requirements:
 
 tests:
   - python:
+      python_version: ${{ python_min }}.*
       imports:
         - jumanji
       pip_check: true
-  - requirements:
-      run:
-        - python ${{ python_min }}.*
 
 about:
   summary: A diverse suite of scalable reinforcement learning environments in JAX
