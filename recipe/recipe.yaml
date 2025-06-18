@@ -10,8 +10,6 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/jumanji-${{ version }}.tar.gz
   sha256: 6b54b150df3a48f2fcef7b1dc4f955ae63de276a3adbbb1f10ea8e7737a0978d
-  patches:
-    - relax-matplotlib-pin.patch
 
 build:
   number: 0
@@ -40,6 +38,9 @@ tests:
       imports:
         - jumanji
       pip_check: true
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
 
 about:
   summary: A diverse suite of scalable reinforcement learning environments in JAX
