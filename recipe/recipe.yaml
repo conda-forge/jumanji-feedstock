@@ -22,6 +22,7 @@ requirements:
     - pip
     - setuptools
     - hatchling
+    - requests
   run:
     - python >=${{ python_min }}
     - chex >=0.1.3
