@@ -1,7 +1,7 @@
 context:
   name: jumanji
   version: "1.1.2"
-  python_min: 3.10
+  python_min: "3.10"
 
 package:
   name: ${{ name|lower }}
@@ -10,8 +10,6 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/jumanji-${{ version }}.tar.gz
   sha256: c8a9f255ac7999176a38bba4ff6b2c0aa73b2fb36ea2adb26cc6afcddb271a8f
-  patches:
-    - relax-matplotlib-pin.patch
 
 build:
   number: 0
