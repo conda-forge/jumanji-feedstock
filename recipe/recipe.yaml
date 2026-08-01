@@ -34,6 +34,7 @@ requirements:
     - pillow >=9.0.0
     - typing_extensions >=4.0.0
     - requests
+    - esquilax
 
 tests:
   - python:
