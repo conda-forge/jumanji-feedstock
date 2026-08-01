@@ -1,7 +1,7 @@
 context:
   name: jumanji
-  version: "1.1.0"
-  python_min: 3.10
+  version: "1.1.2"
+  python_min: "3.10"
 
 package:
   name: ${{ name|lower }}
@@ -9,9 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/jumanji-${{ version }}.tar.gz
-  sha256: 1baa7655bb59060f2435531e449baf2c24e7481ee02725bb34c05a722ac44b57
-  patches:
-    - relax-matplotlib-pin.patch
+  sha256: c8a9f255ac7999176a38bba4ff6b2c0aa73b2fb36ea2adb26cc6afcddb271a8f
 
 build:
   number: 0
@@ -23,6 +21,7 @@ requirements:
     - python ${{ python_min }}.*
     - pip
     - setuptools
+    - hatchling
   run:
     - python >=${{ python_min }}
     - chex >=0.1.3
@@ -34,12 +33,15 @@ requirements:
     - numpy
     - pillow >=9.0.0
     - typing_extensions >=4.0.0
+    - requests
+    - esquilax
 
 tests:
   - python:
       imports:
         - jumanji
       pip_check: true
+      python_version: ${{ python_min }}.*
 
 about:
   summary: A diverse suite of scalable reinforcement learning environments in JAX
